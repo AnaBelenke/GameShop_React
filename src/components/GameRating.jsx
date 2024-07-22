@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import './gameRating.css'
 
 function GameRating({ rating }) {
-    const [stars, setStars] = useState([])
+    const [stars, setStars] = useState([]);
 
     const generateStars = () => {
-        let starts = []
+        let starts = [];
         if (rating > 5 || rating < 1) {
             return;
         }
@@ -13,19 +13,19 @@ function GameRating({ rating }) {
             starts.push(i);
         }
         return stars;
-    }
+    };
 
-    useEffect(()=>{
+    useEffect(() => {
         setStars(generateStars());
-    }, [])
+    }, []);
 
     return (
         <div className="gameRating">
-            {stars.map((star,index) => (
+            {stars.map((star, index) => (
                 <i key={index} className="bi bi-star-fill"></i>
             ))}
         </div>
-    )
+    );
 }
 
 export default GameRating
